@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b30k6ebgucqeb"]
+
+[ext_resource type="Script" uid="uid://44blbgctbj1n" path="res://node_2d.gd" id="1_50jne"]
+[ext_resource type="Texture2D" uid="uid://fkjj2swqrmx8" path="res://assets/New Piskel-1.png.png" id="2_kivx1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q11sv"]
+size = Vector2(56, 56)
+
+[node name="the_rock" type="Node2D" unique_id=72452199]
+script = ExtResource("1_50jne")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1451080828]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=2015920865]
+scale = Vector2(1.6000001, 1.6000001)
+texture = ExtResource("2_kivx1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1988287861]
+position = Vector2(-4, -4)
+shape = SubResource("RectangleShape2D_q11sv")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Area2D" unique_id=799341636]
+rect = Rect2(-24, -24, 40, 40)
+
+[connection signal="screen_exited" from="Area2D/VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

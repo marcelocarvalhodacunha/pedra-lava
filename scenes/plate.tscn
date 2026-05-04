@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://de1saokanni35"]
+
+[ext_resource type="Script" uid="uid://cwprlo73rqig1" path="res://scripts/plate.gd" id="1_2x0a8"]
+[ext_resource type="Texture2D" uid="uid://ihk2eg5qkfke" path="res://assets/icon.svg" id="1_u60wi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2x0a8"]
+size = Vector2(256, 49)
+
+[node name="Plate" type="Node2D" unique_id=664769850]
+script = ExtResource("1_2x0a8")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=959429360]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=2036032650]
+position = Vector2(8.940697e-06, 7.1525574e-07)
+scale = Vector2(2, 0.37500003)
+texture = ExtResource("1_u60wi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=284051379]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_2x0a8")
+one_way_collision = true
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="StaticBody2D" unique_id=176633380]
+
+[node name="TimerPlate" type="Timer" parent="." unique_id=364270214]
+wait_time = 13.649
+autostart = true
+
+[connection signal="screen_exited" from="StaticBody2D/VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="timeout" from="TimerPlate" to="." method="_on_timer_plate_timeout"]

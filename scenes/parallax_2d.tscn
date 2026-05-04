@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://xlcnpgaqjfqv"]
+
+[ext_resource type="Texture2D" uid="uid://c3vhp8lg5hsl1" path="res://assets/images.steamusercontent.jpg" id="1_8sr37"]
+
+[node name="Parallax2D" type="Parallax2D" unique_id=1925042345]
+repeat_size = Vector2(840, 970)
+autoscroll = Vector2(0, 50)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1857743340]
+position = Vector2(420, 488)
+scale = Vector2(1.3186815, 2.726257)
+texture = ExtResource("1_8sr37")
