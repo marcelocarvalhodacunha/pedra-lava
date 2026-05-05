@@ -10,15 +10,15 @@ config_version=5
 
 [application]
 
-config/name="lava pedra"
+config/name="lava pedra 1"
 run/main_scene="uid://b8n0i3ghaopon"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://assets/icon.svg"
 
 [display]
 
-window/size/viewport_width=840
-window/size/viewport_height=970
+window/size/viewport_width=900
+window/size/viewport_height=900
 
 [input]
 
